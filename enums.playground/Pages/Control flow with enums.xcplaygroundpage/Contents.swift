@@ -1,4 +1,4 @@
-
+    
 /*:
  Enumerations (`enum`s) are a very powerful and useful construct in the `Swift` language. They help you to express the _semantics_ of your code very explicitly and let the compiler help you to enforce them.
  
@@ -92,6 +92,27 @@ print("The course is a mobile course: \(isMobile)")
  2. Write a function called `getWeekdayName` that takes a `Weekday` returns the name of each weekday as a `String`, e.g.: `"This weekday is called Sunday."`
  3. Write a function called `isItFinallyWeekend` that takes a `Weekday` and returns a `String` indicating whether the argument is a weekend weekday, e.g.: `"Monday is a regular workday."` or `"Wuhuuuu, it's SATURDAYYYYYYYY."`
  */
-
-
-
+    enum Weekday {
+        case monday
+        case tuesday
+        case wednesday
+        case thursday
+        case friday
+        case saturday
+        case sunday
+    }
+    
+    let weekday1  = Weekday.sunday
+    let weekday2: Weekday = .monday
+  
+    func getWeekdayName(Weekday: Weekday)-> String {
+        var weekdayName: String
+        switch(Weekday) {
+        case .sunday:
+            weekdayName = "This weekday is called Sunday."
+        default:
+            weekdayName =  "This is not a weekday."
+        }
+        return weekdayName
+    }
+    print(getWeekdayName(Weekday: .sunday))
